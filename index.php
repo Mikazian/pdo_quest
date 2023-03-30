@@ -35,22 +35,8 @@ $pdo = new \PDO(DSN, USER, PASS);
     <section class="form-container">
         <h1>Ajouter un Friend</h1>
 
-        <!-- requête préparée -->
-        <?php
-            $firstname = trim($_POST['firstname']); 
-            $lastname = trim($_POST['lastname']);
-
-            $query = 'INSERT INTO friend (firstname, lastname) VALUES (:firstname, :lastname)';
-            $statement = $pdo->prepare($query);
-
-            $statement->bindValue(':firstname', $firstname, \PDO::PARAM_STR);
-            $statement->bindValue(':lastname', $lastname, \PDO::PARAM_STR);
-            
-            $statement->execute();
-        ?>
-
         <!-- formulaire -->
-        <form action="" method="post">
+        <form action="success.php" method="post">
             <div class="form-content">
                 <label for="firstname">Firstname</label>
                 <input type="text" id="firstname" name="firstname" required>
