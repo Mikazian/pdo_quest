@@ -1,8 +1,6 @@
 <?php
-// require_once '_connec.php';
-
-$pdo = new \PDO('mysql:host=localhost;dbname=pdo_quest', 'mikazian', 'mikexiong07');
-
+require_once '_connec.php';
+$pdo = new \PDO(DSN, USER, PASS);
 ?>
 
 <!DOCTYPE html>
